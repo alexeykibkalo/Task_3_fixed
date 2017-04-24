@@ -8,6 +8,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URISyntaxException;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -46,8 +48,7 @@ public class TestScripts {
     public static  void addCategory(WebDriver driver){
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(By.xpath("//li[@id='subtab-AdminCatalog']"))) .build().perform();
-        driver. findElement(By.xpath("//a[@href='http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/index" +
-                ".php?controller=AdminCategories&token=795a6350b3a0f87af2a165b4c1a34372']")).click();
+        driver. findElement(By.xpath("//li[@id='subtab-AdminCategories']")).click();
         WebElement add = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//i[@class = 'process-icon-new']")));
         add.click();
@@ -96,6 +97,12 @@ public class TestScripts {
             }
         }
     }
+
+
+
+
+
+
 
 
 }
